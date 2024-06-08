@@ -19,6 +19,7 @@ const upload=multer({storage:storage});
 
     routes.post('/add', middlware, upload.single('image'), async (req, res) => {
       try {
+          console.log(req.file); // Log the file object
         const image = req.file ? req.file.filename : undefined;
         const vender = await model.findOne(req.venderid._id);
         const { name, price, message, category, place } = req.body;
