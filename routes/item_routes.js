@@ -7,10 +7,13 @@ const middlware = require('../middleware/tokenverify')
 const path = require('path')
 
 const storage= multer.diskStorage({
+    console.log("f")
     destination: function (req, file,cb){ 
+    console.log("f1")
         cb(null,'uploads')  
     },
     filename: function (req,file,cb){
+        console.log("f3")
         cb(null,Date.now() + path.extname(file.originalname))
     }
 });
