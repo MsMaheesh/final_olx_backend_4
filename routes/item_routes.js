@@ -10,7 +10,7 @@ const storage= multer.diskStorage({
     console.log("f")
     destination: function (req, file,cb){ 
     console.log("f1")
-        cb(null,'uploads')  
+        cb(null,'../uploads')  
     },
     filename: function (req,file,cb){
         console.log("f3")
